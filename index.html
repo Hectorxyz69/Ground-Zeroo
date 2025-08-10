@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hacked By Ground Zero</title>
+  <meta name="description" content="Welcome to Ground Zero.">
+  <meta name="keywords" content="Ground Zero Family">
+  <meta name="author" content="Ground Zero">
+  <link rel="icon" href="https://media.discordapp.net/attachments/1332006648952258572/1380523576742121543/image.png?ex=6899e1c5&is=68989045&hm=6668c1b7076e3219c24dc07d10d6d0f8b6b95ab00758e2fbbdd2ae8629a0641d&=&format=webp&quality=lossless&width=1552&height=685" type="image/gif" />
+  <meta property="og:title" content="Ground Zero" />
+  <meta property="og:description" content="." />
+  <meta property="og:image" content="https://cdn.discordapp.com/emojis/1351769571312402512.webp?size=44" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    pre {
+      font-size: 1.1rem;
+      color: #0ff;
+      text-shadow: 0 0 8px #0ff;
+      display: inline-block;
+      text-align: left;
+      white-space: pre-wrap;
+      max-width: 90vw;
+    }
+
+    h2 {
+      margin: 30px 0 10px;
+      font-size: 1.4rem;
+      color: #ff0055;
+      text-shadow: 0 0 5px #ff0055;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #00f0ff;
+      font-size: 1.2rem;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00f0ff;
+    }
+
+    #members, #greetz {
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid;
+      padding-right: 5px;
+      animation: blink 1s step-end infinite;
+    }
+
+    #members {
+      color: #00ffcc;
+      border-color: #00ffcc;
+    }
+
+    #greetz {
+      color: #8eb7f0;
+      border-color: #ff0077;
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #bgimage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+      filter: brightness(1.3);
+    }
+
+    @keyframes blink {
+      10% {
+        border-color: transparent;
+      }
+    }
+
+    /* Overlay style */
+    #overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      color: #0ff;
+      font-family: 'Courier New', monospace;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1000;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <img id="bgimage" src="https://media.discordapp.net/attachments/1332006648952258572/1380220538496225340/Screenshot_2025-06-06_001522.png?ex=689a190b&is=6898c78b&hm=d7371281036b23f52ef7e8200230e6199724753be419d1dda6fd176a959e08c6&=&format=webp&quality=lossless" alt="Background" />
+
+  <pre>
+    ______   ______   ______   __  __   __   __   _____       ______   ______   ______   ______    
+/\  ___\ /\  == \ /\  __ \ /\ \/\ \ /\ "-.\ \ /\  __-.    /\___  \ /\  ___\ /\  == \ /\  __ \   
+\ \ \__ \\ \  __< \ \ \/\ \\ \ \_\ \\ \ \-.  \\ \ \/\ \   \/_/  /__\ \  __\ \ \  __< \ \ \/\ \  
+ \ \_____\\ \_\ \_\\ \_____\\ \_____\\ \_\\"\_\\ \____-     /\_____\\ \_____\\ \_\ \_\\ \_____\ 
+  \/_____/ \/_/ /_/ \/_____/ \/_____/ \/_/ \/_/ \/____/     \/_____/ \/_____/ \/_/ /_/ \/_____/ 
+                                                                                                
+     Your System Was Hacked. 
+  </pre>
+
+  <h2>Member:</h2>
+  <div id="members"></div>
+
+  <h2>Greetz:</h2>
+  <div class="center"><div id="greetz"></div></div>
+
+  <!-- Overlay -->
+  <div id="overlay">Click anywhere to enable sound</div>
+
+  <script>
+    const audio = new Audio("HELLMERRY - Anghell (Official Audio).mp3");
+    audio.loop = true;
+    audio.volume = 1;
+
+    const memberText = "PATRON HARU1CHI11, SUPREMO SH1NUWE. SEITONA HECTOR";
+    const greetzText = "FROM GROUND ZERO";
+
+    const memberEl = document.getElementById("members");
+    const greetzEl = document.getElementById("greetz");
+
+    function typeLoop(text, el, delayBeforeRestart) {
+      let i = 0;
+      el.textContent = "";
+
+      function type() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 100);
+        } else {
+          setTimeout(() => typeLoop(text, el, delayBeforeRestart), delayBeforeRestart);
+        }
+      }
+
+      type();
+    }
+
+    typeLoop(memberText, memberEl, 3000);
+    typeLoop(greetzText, greetzEl, 5000);
+
+    // Overlay click to enable audio
+    const overlay = document.getElementById("overlay");
+    overlay.addEventListener("click", () => {
+      audio.play().then(() => {
+        overlay.style.display = "none";
+      }).catch(err => {
+        console.error("Audio play failed:", err);
+        alert("Unable to play audio. Please try again.");
+      });
+    });
+  </script>
+</body>
+</html>
